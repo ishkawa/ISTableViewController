@@ -2,6 +2,7 @@
 
 @implementation ISTableViewController
 
+@synthesize style = _style;
 @synthesize tableView = _tableView;
 @synthesize indicatorView = _indicatorView;
 @synthesize array = _array;
@@ -20,8 +21,8 @@
 {
     [super loadView];
 
-    self.tableView = [[[UITableView alloc] init] autorelease];
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.tableView = [[[UITableView alloc] initWithFrame:frame style:self.style] autorelease];
     self.tableView.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
     [self.view addSubview:self.tableView];
     
