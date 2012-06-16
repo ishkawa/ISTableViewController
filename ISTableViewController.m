@@ -13,6 +13,7 @@
     self = [super init];
     if (self) {
         self.array = [NSMutableArray array];
+        self.style = UITableViewStylePlain;
     }
     return self;
 }
@@ -20,6 +21,7 @@
 - (void)loadView
 {
     [super loadView];
+    self.view.backgroundColor = [UIColor whiteColor];
 
     CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.tableView = [[[UITableView alloc] initWithFrame:frame style:self.style] autorelease];
