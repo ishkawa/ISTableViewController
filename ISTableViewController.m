@@ -47,10 +47,11 @@
     self.messageLabel.textColor = [UIColor lightGrayColor];
     self.messageLabel.font = [UIFont systemFontOfSize:14];
     self.messageLabel.text = @"No Items";
+    self.messageLabel.backgroundColor = [UIColor clearColor];
     self.messageLabel.frame = CGRectMake(self.view.frame.size.width/2.f - width/2.f,
-                                         self.view.frame.size.height/2.f,
+                                         self.view.frame.size.height/2.f - 10,
                                          width, height);
-    [self.view addSubview:self.messageLabel];
+    [self.tableView addSubview:self.messageLabel];
 }
 
 - (void)viewDidLoad
@@ -93,7 +94,6 @@
 - (void)showMessageLabel
 {
     [self.indicatorView stopAnimating];
-    self.tableView.hidden = YES;
     self.messageLabel.hidden = NO;
 }
 
